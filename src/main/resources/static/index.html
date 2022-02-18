@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .my-custom-scrollbar {
+      position: relative;
+      height: 200px;
+      overflow: auto;
+    }
+
+    .table-wrapper-scroll-y {
+      display: block;
+    }
+
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {
+      height: 450px
+    }
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #b1d2f2;  /*LIGHT GREEN COLOR */ 
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+
+      .row.content {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Logo</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+
+          <li><a href="#">Patients</a></li>
+          <li><a href="#">All-Appointments</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid text-center">
+    <div class="row content">
+      <div class="col-sm-2 sidenav">
+        <p><a href="#">Add Appointment</a></p>
+        <p><a href="#">Link</a></p>
+      </div>
+
+      <div class="col-sm-5 text-left">
+        <br><br>
+
+        <h3 style=" "> TODAY'S APPOINTMENTS</h3>
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+
+          <table class="table table-bordered table-striped mb-0">
+
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Patient name</th>
+                <th scope="col">Date</th>
+                <th scope="col">time</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+
+              </tr>
+
+
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+      <div class="col-sm-5 text-left bg-success p-2 text-dark bg-opacity-10">
+        <h3 class="text-center">Enter Patient's Details : </h3>
+        <form action="/customer-api/add" method="post">
+          <!-- NOTICE POST-TYPE-MAPPING AND url-path on clicking button -->
+          <div class="mb-3">
+            <label for="txtName" class="form-label">Patient Name</label>
+            <input type="text" class="form-control" id="txtName" name="name" style="width: 320px;">
+          </div>
+          <div class="mb-3">
+            <label for="txtAge" class="form-label">Age</label>
+            <input type="number" class="form-control" id="txtAge" name="age" style="width: 100px;">
+          </div>
+          <div class="mb-3">
+            <label for="txtPhone" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="txtPhone" name="phone" style="width: 320px;">
+          </div>
+          <div class="mb-3">
+            <label for="txtGender" class="form-label">Gender</label>
+            <input type="text" class="form-control" id="txtGender" name="gender" style="width: 30px;">
+          </div>
+          <div class="mb-3">
+            <label for="txtDob" class="form-label">dob</label>
+            <input type="text" class="form-control" id="txtDob" name="dob" style="width: 320px;">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add Patient</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="container-fluid text-center">
+    <p>Footer Text</p>
+  </footer>
+
+</body>
+
+</html>
